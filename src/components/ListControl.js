@@ -56,13 +56,6 @@ const SearchProperties = (props) => {
     props.datahandler(formDataObject);
   };
 
-  // const handleClear = () => {
-  //   setSliderValue(0);
-  //   selectedCity("");
-  //   selectedDate(null);
-  //   selectedPropertyType("");
-  // };
-
   return (
     <Box
       p={4}
@@ -88,6 +81,7 @@ const SearchProperties = (props) => {
             placeholder="Select City"
             size="lg"
             ml={2}
+            mr={2}
             borderRadius="none"
             mb={{ base: "2", sm: "0" }}
             onChange={handleCityChange}
@@ -97,18 +91,27 @@ const SearchProperties = (props) => {
             <option value="Kanpur">Kanpur</option>
             <option value="Lucknow">Lucknow</option>
           </Select>
-          <Text fontSize="sm" fontWeight="bold">
-            Select date
-          </Text>
           <DatePicker
+            ml={2}
+            mr={2}
+            mt={{ base: "2", sm: "2" }}
             selected={selectedDate}
             onChange={handleDateChange}
             placeholderText="Select a date"
           />
-          <Text fontSize="sm" fontWeight="bold">
-            Price Range
+          <Text
+            fontSize="sm"
+            fontWeight="bold"
+            mb={{ base: "2", sm: "0" }}
+            ml={2}
+            mr={2}
+          >
+            Price
           </Text>
           <Slider
+            ml={2}
+            mr={2}
+            mb={{ base: "2", sm: "0" }}
             aria-label="slider-ex-1"
             value={sliderValue}
             onChange={handleSliderChange}
@@ -143,17 +146,6 @@ const SearchProperties = (props) => {
             onClick={handleSubmit}
           >
             Apply
-          </Button>
-          <Button
-            ml={2}
-            color="white"
-            size="lg"
-            borderRadius="7px"
-            backgroundColor="#7A7EEE"
-            variant="solid"
-            // onClick={handleClear}
-          >
-            Clear
           </Button>
         </Flex>
       </Box>
